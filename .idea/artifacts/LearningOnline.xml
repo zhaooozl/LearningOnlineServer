@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="LearningOnline">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="LearningOnline.war">
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+      <element id="directory" name="WEB_INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LearningOnline" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
