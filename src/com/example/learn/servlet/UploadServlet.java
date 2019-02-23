@@ -29,7 +29,7 @@ public class UploadServlet extends HttpServlet {
     // 新版JDBC驱动
     public static final String NEW_JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     // 数据库地址
-    public static final String DB_URL = "jdbc:mysql://localhost:3306/LearningOnline";
+    public static final String DB_URL = "jdbc:mysql://localhost:3306/LearningOnline?serverTimezone=GMT";
     // 数据库登录用户名
     public static final String DB_USER = "root";
     // 数据库登录密码

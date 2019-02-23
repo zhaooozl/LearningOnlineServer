@@ -22,11 +22,15 @@ public class CommentsServlet extends BaseServlet {
             final String studentId = req.getParameter("studentId");
             final String commentDesc = req.getParameter("commentDesc");
 
+            long timestamp = System.currentTimeMillis();
+
             final String sql = "insert into comments " +
-                    "(teacherid, studentid, commentdesc) values " +
+                    "(teacherid, studentid, commentdesc, timestamp) values " +
                     "(" + teacherId + ", " +
                     studentId + ", \"" +
-                    commentDesc + "\")";
+                    commentDesc + "\", " +
+                    timestamp +
+                    ")";
 
             boolean isExecute = statement.execute(sql);
             BaseRespBean<InsertRespBean> baseRespBean = new BaseRespBean<>();
@@ -56,6 +60,7 @@ public class CommentsServlet extends BaseServlet {
                 String studentid = resultSet.getString("studentid");
                 String commentdesc = resultSet.getString("commentdesc");
                 String username = resultSet.getString("username");
+                String timestamp = resultSet.getString("timestamp");
 
                 commentBean = new CommentBean();
                 commentBean.setCommentId(commentid);
@@ -63,6 +68,7 @@ public class CommentsServlet extends BaseServlet {
                 commentBean.setStudentId(studentid);
                 commentBean.setCommentDesc(commentdesc);
                 commentBean.setUserName(username);
+                commentBean.setTimestamp(timestamp);
                 commentBeans.add(commentBean);
             }
 

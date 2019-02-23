@@ -6,6 +6,7 @@ public class CommentBean {
     private String studentId;
     private String commentDesc;
     private String userName;
+    private String timestamp;
 
     public String getCommentId() {
         return commentId;
@@ -45,5 +46,13 @@ public class CommentBean {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }

@@ -30,7 +30,12 @@ public class SubjectServlet extends BaseServlet {
         if ("query".equals(operateType)) {
             String userId = req.getParameter("userId");
             System.out.println("userId: " + userId);
-            String sqlQuery = "SELECT subjectid, subjectname, subjectdesc, courseware, userid FROM subject WHERE userid=" + userId;
+            String sqlQuery = null;
+            if (userId != null && !"".equals(userId)) {
+                sqlQuery = "SELECT subjectid, subjectname, subjectdesc, courseware, userid FROM subject WHERE userid=" + userId;
+            } else {
+                sqlQuery = "SELECT subjectid, subjectname, subjectdesc, courseware, userid FROM subject";
+            }
             System.out.println("sqlQuery: " + sqlQuery);
             ArrayList<SubjectRespBean> subjectBeans = new ArrayList<>();
             BaseRespBean<ArrayList<SubjectRespBean>> respBean = new BaseRespBean<>();
